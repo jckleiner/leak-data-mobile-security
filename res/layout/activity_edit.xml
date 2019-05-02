@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:id="@id/include" layout="@layout/content_edit" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <EditText android:id="@id/title" android:paddingLeft="40.0dip" android:layout_width="392.0dip" android:layout_height="72.0dip" android:hint="Title" android:ems="10" android:inputType="textPersonName" />
+        <EditText android:gravity="start" android:id="@id/content" android:paddingLeft="40.0dip" android:layout_width="fill_parent" android:layout_height="612.0dip" android:hint="Memo" android:ems="10" android:autoText="false" android:inputType="textMultiLine" android:textAlignment="textStart" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

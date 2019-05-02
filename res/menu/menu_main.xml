@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/dbg_addnote" android:orderInCategory="100" android:title="@string/testnote" />
+    <item android:id="@id/dbg_delall" android:orderInCategory="101" android:title="@string/dbg_delall" app:showAsAction="never" />
+</menu>
