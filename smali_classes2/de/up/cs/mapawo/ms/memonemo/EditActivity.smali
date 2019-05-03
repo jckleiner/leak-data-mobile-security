@@ -591,7 +591,6 @@
         }
     .end annotation
 
-    .line 169
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lde/up/cs/mapawo/ms/memonemo/EditActivity$1;
@@ -600,10 +599,8 @@
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 193
     .local v0, "thread":Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 194
     return-void
 .end method
